@@ -5,21 +5,15 @@ import {
   PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { DateTransformer } from '../constant/transformers/date.transformer';
-import { EntityName } from '../constant/enum/entity-name.enum';
-import { IsTrimmedStringWithoutTab } from '../constant/validators/trimmed-string-without-tab.validator';
+import { DateTransformer } from '../constants/transformers/date.transformer';
+import { EntityName } from '../constants/enum/entity-name.enum';
+import { IsTrimmedStringWithoutTab } from '../constants/validators/trimmed-string-without-tab.validator';
 @Entity(EntityName.ACCOUNTS)
 export class AccountEntity {
   @PrimaryColumn({
     type: 'integer',
   })
   code!: number;
-
-  @CreateDateColumn({
-    name: 'created_at',
-    transformer: new DateTransformer(),
-  })
-  createdAt: Date;
 
   @Column({
     type: 'varchar',
@@ -34,6 +28,12 @@ export class AccountEntity {
   })
   @IsTrimmedStringWithoutTab()
   englishName: string;
+
+  @CreateDateColumn({
+    name: 'created_at',
+    transformer: new DateTransformer(),
+  })
+  createdAt: Date;
 
   @UpdateDateColumn({
     name: 'updated_at',

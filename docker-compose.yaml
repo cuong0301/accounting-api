@@ -1,0 +1,14 @@
+version: "3.2"
+
+services:
+  pg:
+    image: postgres
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=accounting-api
+    volumes:
+      - ./db-dump/latest:/docker-entrypoint-initdb.d/
+    command: -cmax_wal_size=10GB -clog_statement=all

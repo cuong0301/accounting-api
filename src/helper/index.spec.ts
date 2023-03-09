@@ -1,4 +1,4 @@
-import { Env } from '../constant/enum/env.enum';
+import { Env } from '../constants/enum/env.enum';
 import { assertToBeDefined, isDevOrTestEnv, isEnvCorrect } from './index';
 
 describe('[helpers/index]', () => {
