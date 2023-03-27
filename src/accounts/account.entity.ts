@@ -11,19 +11,17 @@ import { IsTrimmedStringWithoutTab } from '../constants/validators/trimmed-strin
 @Entity(EntityName.ACCOUNTS)
 export class AccountEntity {
   @PrimaryColumn({
-    type: 'integer',
+    nullable: false,
   })
-  code!: number;
+  code!: string;
 
   @Column({
-    type: 'varchar',
     name: 'name_vi',
   })
   @IsTrimmedStringWithoutTab()
   vietnameseName: string;
 
   @Column({
-    type: 'varchar',
     name: 'name_en',
   })
   @IsTrimmedStringWithoutTab()
