@@ -11,7 +11,7 @@ export const readFileExcel = (
   const worksheet = workbook.Sheets['Sheet1'];
   const range = XLSX.utils.decode_range(worksheet['!ref']);
   range.s.r = rowStart;
-  range.e.c = cellStart;
+  range.s.c = cellStart;
   const data = XLSX.utils.sheet_to_json(worksheet, { range });
   return data;
 };
