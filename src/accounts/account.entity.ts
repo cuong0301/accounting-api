@@ -12,8 +12,9 @@ import { IsTrimmedStringWithoutTab } from '../constants/validators/trimmed-strin
 export class AccountEntity {
   @PrimaryColumn({
     nullable: false,
+    type: 'integer',
   })
-  code!: string;
+  code!: number;
 
   @Column({
     name: 'name_vi',
