@@ -5,7 +5,7 @@ import * as uuid from 'uuid';
 
 import { AccountEntity } from '../../src/accounts/account.entity';
 
-import { Accounts } from '../_fixtures_/accounts.fixtures';
+import { accounts } from '../_fixtures_/accounts.fixtures';
 
 export type Repositories = {
   accountingRepo?: Repository<AccountEntity>;
@@ -46,5 +46,5 @@ export async function clearDataSource(dataSource: DataSource) {
 }
 
 export async function initializeTestDb(dataSource: DataSource) {
-  await dataSource.getRepository(AccountEntity).save(Accounts);
+  await dataSource.getRepository(AccountEntity).save(accounts);
 }

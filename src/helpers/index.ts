@@ -5,7 +5,7 @@
  *
  * @return {boolean} if it is a correct environment
  */
-import { Env } from '../constants/enum/env.enum';
+import { Env } from '../constants/./enums/env.enum';
 
 export function isEnvCorrect(env: unknown): boolean {
   return Object.values(Env).includes(env as Env);

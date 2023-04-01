@@ -3,8 +3,8 @@ import * as dotenv from 'dotenv';
 import { DataSource } from 'typeorm';
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 
-import { Env } from '../constants/enum/env.enum';
-import { assertToBeDefined, isDevOrTestEnv } from '../helper';
+import { Env } from '../constants/./enums/env.enum';
+import { assertToBeDefined, isDevOrTestEnv } from '../helpers';
 
 export const ENV: Env = process.env.JEST_WORKER_ID
   ? Env.TEST

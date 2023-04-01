@@ -1,6 +1,6 @@
 import { AccountEntity } from '../../src/accounts/account.entity';
 
-export const Accounts: AccountEntity[] = [
+export const accounts: AccountEntity[] = [
   {
     code: 111,
     vietnameseName: 'Tiền mặt',

@@ -1,8 +1,12 @@
-import { readFileExcel } from '../../src/scripts/readFileExcel';
 import * as path from 'path';
-describe('readFileExcel', () => {
+import { readFileExcel } from './read-file-excel';
+describe('#readFileExcel', () => {
   it('should read file Excel correctly', () => {
-    const data = readFileExcel(path.join(__dirname, './exampledata.xls'), 2, 2);
+    const data = readFileExcel(
+      path.join(__dirname, '../test/_fixtures_/exampleData.xls'),
+      2,
+      2,
+    );
     expect(data).toEqual([
       {
         code: '1123',
